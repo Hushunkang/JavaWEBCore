@@ -13,7 +13,7 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
+# *.jar #mavan工程可以放开
 *.war
 *.nar
 *.ear
