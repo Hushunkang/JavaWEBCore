@@ -27,7 +27,7 @@
 				$trObj.remove();
 			}
 
-			// return false; 可以阻止 元素的默认行为。
+			// return false; 可以阻止 元素的默认行为。比如说a标签的默认行为就是跳转
 			return false;
 		};
 
@@ -36,6 +36,9 @@
 
 		// 给【Submit】按钮绑定单击事件
 		$("#addEmpButton").click(function () {
+
+			alert("事件响应的function：" + this);
+
 			// 获取输入框，姓名，邮箱，工资的内容
 			var name = $("#empName").val();
 			var email = $("#email").val();
@@ -63,6 +66,9 @@
 
 		// 给删除的a标签绑定单击事件
 		$("a").click( deleteFun );
+		//千万注意：deleteFun是函数的定义，正式我们click方法需要的
+		//不要写成deleteFun()，这样表示调用了这个函数，那就相当于给deleteFun函数的返回值传给click方法
+		//这样是不正确的
 
 
 	});
