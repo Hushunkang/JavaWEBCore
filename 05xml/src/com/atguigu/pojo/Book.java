@@ -5,7 +5,8 @@ import java.math.BigDecimal;
 public class Book {
     private String sn;
     private String name;
-    private BigDecimal price;
+    private BigDecimal price;//9.9000000000000003552713678800500929355621337890625
+    //double类型好一些，如果要进行精准的算术运算，再给double类型转成BigDecimal类型即可
     private String author;
 
     public Book(String sn, String name, BigDecimal price, String author) {
