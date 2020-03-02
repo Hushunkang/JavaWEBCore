@@ -1,11 +1,15 @@
 package com.atguigu.test;
 
-import org.jetbrains.annotations.Contract;
-
+/**
+ * @author hskBeginner Email：2752962035@qq.com
+ * @version 1.0
+ * @description
+ * @create 2020年03月03日 00时41分40秒
+ */
 public class Test {
 
-    @Contract(pure = true)
     public static void main(String[] args) {
+
 
 
     }
