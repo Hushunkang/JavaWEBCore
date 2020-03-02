@@ -32,7 +32,7 @@ hs_err_pid*
 /bin/
 classes/
 /target/
-META-INF/
+# META-INF/
 
 # idea
 *.iml
