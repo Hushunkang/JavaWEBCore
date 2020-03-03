@@ -27,7 +27,7 @@
 			<param-name>password</param-name>
 			<param-value>123456</param-value>
 		</init-param>
-		<load-on-startup>-1</load-on-startup>
+		<load-on-startup>-1</load-on-startup><!--  相当于懒加载，真正请求到这个Servlet的时候才会创建这个Servlet类的实例 -->
 	</servlet>
 	<!-- 映射Servlet -->
 	<servlet-mapping>

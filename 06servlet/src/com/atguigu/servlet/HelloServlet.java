@@ -17,9 +17,9 @@ public class HelloServlet implements Servlet {
 //        1、可以获取Servlet程序的别名servlet-name的值
         System.out.println("HelloServlet程序的别名是:" + servletConfig.getServletName());
 //        2、获取初始化参数init-param
-        System.out.println("初始化参数username的值是;" + servletConfig.getInitParameter("username"));
-        System.out.println("初始化参数url的值是;" + servletConfig.getInitParameter("url"));
-//        3、获取ServletContext对象
+        System.out.println("初始化参数username的值是:" + servletConfig.getInitParameter("username"));
+        System.out.println("初始化参数url的值是:" + servletConfig.getInitParameter("url"));
+//        3、获取ServletContext对象---Servlet上下文对象
         System.out.println(servletConfig.getServletContext());
     }
 
@@ -38,10 +38,12 @@ public class HelloServlet implements Servlet {
     @Override
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
         System.out.println("3 service === Hello Servlet 被访问了");
-        // 类型转换（因为它有getMethod()方法）
+        // 向下转型，强制类型转换（因为它有getMethod()方法）
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
         // 获取请求的方式
         String method = httpServletRequest.getMethod();
+
+        System.out.println(method);
 
         if ("GET".equals(method)) {
             doGet();

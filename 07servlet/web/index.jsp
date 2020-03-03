@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>index首页</title>
   </head>
   <body>
-  $END$
+    这是07servlet工程中的首页index.jsp
   </body>
 </html>

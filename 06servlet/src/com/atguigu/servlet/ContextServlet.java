@@ -22,11 +22,16 @@ public class ContextServlet extends HttpServlet {
 //        2、获取当前的工程路径，格式: /工程路径
         System.out.println( "当前工程路径:" + context.getContextPath() );
 //        3、获取工程部署后在服务器硬盘上的绝对路径
-        /**
+        /*
+         *
+         *  http://ip:port/工程名/ 表示定位到了idea javaweb工程的web目录
          *  / 斜杠被服务器解析地址为:http://ip:port/工程名/  映射到IDEA代码的web目录<br/>
+         *  http://ip:port/工程名/某个servlet
+         *  http://ip:port/工程名/css/***
+         *  http://ip:port/工程名/imgs/***
          */
         System.out.println("工程部署的路径是:" + context.getRealPath("/"));
         System.out.println("工程下css目录的绝对路径是:" + context.getRealPath("/css"));
-        System.out.println("工程下imgs目录1.jpg的绝对路径是:" + context.getRealPath("/imgs/1.jpg"));
+        System.out.println("工程下imgs目录1.jpg的绝对路径是:" + context.getRealPath("/imgs/0.jpg"));
     }
 }
