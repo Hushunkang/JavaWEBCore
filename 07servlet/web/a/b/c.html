@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <!--base标签设置页面相对路径工作时参照的地址
+    <!--base标签设置当前页面，相对路径工作时参照的地址
             href 属性就是参数的地址值
     -->
-    <base href="http://localhost:8080/07_servlet/a/b/">
+<!--    <base href="http://localhost:8089/07servlet/a/b/c.html">&lt;!&ndash; 可行 &ndash;&gt;-->
+    <base href="http://localhost:8089/07servlet/a/b/"><!-- 可行 -->
+<!--    <base href="http://localhost:8089/07servlet/a/b">&lt;!&ndash; 不可行，去掉正斜杠/浏览器会认为b是一个资源，而不是一个目录 &ndash;&gt;-->
 </head>
 <body>
     这是a下的b下的c.html页面<br/>
+<!--    <a href="http://localhost:8089/07servlet/a/b/ ../../index.html">跳回首页</a><br/>-->
+    <!-- 相对路径 当前文件所在目录的上一级目录的上一级目录下面的index.html -->
     <a href="../../index.html">跳回首页</a><br/>
+    <!-- 相对路径 资源名---当前文件所在目录下的资源名 -->
+    <a href="0.jpg">beauty</a>
 </body>
 </html>

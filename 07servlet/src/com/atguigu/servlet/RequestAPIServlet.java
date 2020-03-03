@@ -16,8 +16,8 @@ public class RequestAPIServlet extends HttpServlet {
         System.out.println("URL => " + req.getRequestURL());
 //        iii.getRemoteHost()				获取客户端的ip地址
         /**
-         * 在IDEA中，使用localhost访问时，得到的客户端 ip 地址是 ===>>> 127.0.0.1<br/>
-         * 在IDEA中，使用127.0.0.1访问时，得到的客户端 ip 地址是 ===>>> 127.0.0.1<br/>
+         * 在IDEA中，使用localhost访问时，得到的客户端 ip 地址是 ===>>> 0:0:0:0:0:0:0:1<br/>ipv6形式的地址
+         * 在IDEA中，使用127.0.0.1访问时，得到的客户端 ip 地址是 ===>>> 127.0.0.1<br/>ipv4形式的地址
          * 在IDEA中，使用 真实ip 访问时，得到的客户端 ip 地址是 ===>>> 真实的客户端 ip 地址<br/>
          */
         System.out.println("客户端 ip地址 => " + req.getRemoteHost());

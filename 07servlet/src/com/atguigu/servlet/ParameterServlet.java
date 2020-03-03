@@ -16,8 +16,8 @@ public class ParameterServlet extends HttpServlet {
         // 获取请求参数
         String username = req.getParameter("username");
 
-        //1 先以iso8859-1进行编码
-        //2 再以utf-8进行解码
+        //1 先以iso8859-1进行编码encode
+        //2 再以utf-8进行解码decode
         username = new String(username.getBytes("iso-8859-1"), "UTF-8");
 
         String password = req.getParameter("password");

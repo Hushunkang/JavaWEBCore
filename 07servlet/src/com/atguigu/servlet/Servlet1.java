@@ -24,6 +24,8 @@ public class Servlet1 extends HttpServlet {
          *
          */
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/servlet2");
+        //WEB-INF是受保护的目录，直接在浏览器里面敲入地址是访问不到该目录的，可以转发的方式访问一下该目录下的资源
+//        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/form.html");
 //        RequestDispatcher requestDispatcher = req.getRequestDispatcher("http://www.baidu.com");
 
         // 走向Sevlet2（柜台 2）

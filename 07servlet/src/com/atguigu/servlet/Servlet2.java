@@ -18,6 +18,6 @@ public class Servlet2 extends HttpServlet {
         System.out.println("柜台1是否有章：" + key1);
 
         // 处理自己的业务
-        System.out.println("Servlet2 处理自己的业务 ");
+        System.out.println("Servlet2 处理自己的业务...");
     }
 }
