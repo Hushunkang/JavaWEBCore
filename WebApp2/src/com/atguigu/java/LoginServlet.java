@@ -68,7 +68,9 @@ public class LoginServlet implements Servlet{
 	 */
 	@Override
 	public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// 设置请求体的字符集为UTF-8，从而解决post请求的中文乱码问题
+		// 也要在获取请求参数之前调用才有效
+		request.setCharacterEncoding("UTF-8");
 		System.out.println("LoginServlet service...");
 		System.out.println("请求来喽...");
 		
@@ -113,7 +115,7 @@ public class LoginServlet implements Servlet{
 		System.out.println(servletPath);
 		
 		//设置响应内容的类型
-		response.setContentType("application/msword");
+//		response.setContentType("application/msword;charset=UTF-8");
 		
 		PrintWriter out = response.getWriter();
 		String str = "Hello world...";

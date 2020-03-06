@@ -22,7 +22,7 @@ public class ResponseIOServlet extends HttpServlet {
         //解决中文乱码的方式二：
         // 它会同时设置服务器和客户端都使用UTF-8字符集，还设置了响应头
         // 此方法一定要在获取流对象之前调用才有效
-        resp.setContentType("text/html; charset=UTF-8");
+        resp.setContentType("text/html;charset=UTF-8");
 
         System.out.println( resp.getCharacterEncoding() );//输出服务器端的字符集
 
