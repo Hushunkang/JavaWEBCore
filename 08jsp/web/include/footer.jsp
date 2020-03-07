@@ -1,15 +1,17 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Hushunkang
-  Date: 2020/3/6
-  Time: 8:17
+  User: Administrator
+  Date: 2020/2/23
+  Time: 22:05
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>首页</title>
-  </head>
-  <body>
-  </body>
+<head>
+    <title>Title</title>
+</head>
+<body>
+    脚页信息 <br>
+    改二下 <%=request.getParameter("password")%>
+</body>
 </html>
