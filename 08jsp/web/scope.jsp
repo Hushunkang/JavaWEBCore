@@ -28,7 +28,7 @@
     %>
     <%--
         <jsp:forward page=""></jsp:forward> 是请求转发标签，它的功能就是请求转发
-            page 属性设置请求转发的路径
+            page 属性设置请求转发的路径，注意请求转发是一次请求
     --%>
     <jsp:forward page="/scope2.jsp"></jsp:forward>
 </body>

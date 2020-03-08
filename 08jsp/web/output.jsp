@@ -12,8 +12,8 @@
 </head>
 <body>
     <%
-        out.write(12);
-//        out.print(12);
+//        out.write(12);
+        out.print(12);//实际用这个
     %>
 </body>
 </html>

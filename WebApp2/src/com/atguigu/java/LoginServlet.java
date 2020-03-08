@@ -125,7 +125,7 @@ public class LoginServlet implements Servlet {
 //		boolean flag = false;
 //		out.print(flag);//Value 'flag' is always 'false'
 //		out.write(flag);//Cannot resolve method 'write(boolean)'
-        //print方法和write没多大区别，具体可看源码，print方法多了一个安全校验，建议用print
+        //print方法和write没多大区别，具体可看源码，深入源码，浅出结论，用print方法
         //https://blog.csdn.net/lutinghuan/article/details/5792004
 
         //ctrl+alt+l整理格式，原来是tab的样子，改成了现在4个空格的样子
