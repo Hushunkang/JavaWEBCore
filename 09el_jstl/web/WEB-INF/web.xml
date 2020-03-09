@@ -24,5 +24,13 @@
         <url-pattern>/uploadServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>Download</servlet-name>
+        <servlet-class>com.atguigu.servlet.Download</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Download</servlet-name>
+        <url-pattern>/download</url-pattern>
+    </servlet-mapping>
 
 </web-app>
