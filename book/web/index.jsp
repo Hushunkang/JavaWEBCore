@@ -4,10 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <title>书城首页</title>
-<link type="text/css" rel="stylesheet" href="static/css/style.css" >
+	<%-- 静态包含，base标签，css文件，jQuery文件库 --%>
+	<%@include file="/pages/common/head.jsp"%>
 </head>
 <body>
-	
 	<div id="header">
 			<img class="logo_img" alt="" src="static/img/logo.gif" >
 			<span class="wel_word">网上书城</span>
@@ -171,11 +171,8 @@
 		</div>
 	
 	</div>
-	
-	<div id="bottom">
-		<span>
-			尚硅谷书城.Copyright &copy;2015
-		</span>
-	</div>
+
+	<%-- 静态包含页脚信息 --%>
+	<%@include file="/pages/common/foot.jsp"%>
 </body>
 </html>

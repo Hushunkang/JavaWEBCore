@@ -4,15 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>尚硅谷会员注册页面</title>
-    <!-- 写base标签，永远固定相对路径的跳转结果 -->
-    <!-- web阶段 base标签+相对路径获取资源 -->
-    <!-- JavaEE框架阶段 绝对路径获取资源
-    我认为，两种获取资源的方式，
-    实际项目开发中用相对路径，
-    部署web工程做一个虚拟路径和真实资源的一个映射即可 -->
-    <base href="http://localhost:8091/book/"/>
-    <link type="text/css" rel="stylesheet" href="static/css/style.css" >
-    <script type="text/javascript" src="static/script/jquery-1.7.2.js"></script>
+
+    <%-- 静态包含，base标签，css文件，jQuery文件库 --%>
+    <%@include file="/pages/common/head.jsp" %>
     <script type="text/javascript">
         // 页面加载完成之后
         $(function () {
@@ -92,8 +86,8 @@
 
     </script>
     <style type="text/css">
-        .login_form{
-            height:420px;
+        .login_form {
+            height: 420px;
             margin-top: 25px;
         }
 
@@ -101,7 +95,7 @@
 </head>
 <body>
 <div id="login_header">
-    <img class="logo_img" alt="" src="static/img/logo.gif" >
+    <img class="logo_img" alt="" src="static/img/logo.gif">
 </div>
 
 <div class="login_banner">
@@ -121,30 +115,30 @@
                     <form action="registServlet" method="post">
                         <label>用户名称：</label>
                         <input class="itxt" type="text" placeholder="请输入用户名"
-                               autocomplete="off" tabindex="1" name="username" id="username" />
-                        <br />
-                        <br />
+                               autocomplete="off" tabindex="1" name="username" id="username"/>
+                        <br/>
+                        <br/>
                         <label>用户密码：</label>
                         <input class="itxt" type="password" placeholder="请输入密码"
-                               autocomplete="off" tabindex="1" name="password" id="password" />
-                        <br />
-                        <br />
+                               autocomplete="off" tabindex="1" name="password" id="password"/>
+                        <br/>
+                        <br/>
                         <label>确认密码：</label>
                         <input class="itxt" type="password" placeholder="确认密码"
-                               autocomplete="off" tabindex="1" name="repwd" id="repwd" />
-                        <br />
-                        <br />
+                               autocomplete="off" tabindex="1" name="repwd" id="repwd"/>
+                        <br/>
+                        <br/>
                         <label>电子邮件：</label>
                         <input class="itxt" type="text" placeholder="请输入邮箱地址"
-                               autocomplete="off" tabindex="1" name="email" id="email" />
-                        <br />
-                        <br />
+                               autocomplete="off" tabindex="1" name="email" id="email"/>
+                        <br/>
+                        <br/>
                         <label>验证码：</label>
                         <input class="itxt" type="text" style="width: 150px;" name="code" id="code"/>
                         <img alt="" src="static/img/code.bmp" style="float: right; margin-right: 40px">
-                        <br />
-                        <br />
-                        <input type="submit" value="注册" id="sub_btn" />
+                        <br/>
+                        <br/>
+                        <input type="submit" value="注册" id="sub_btn"/>
                     </form>
                 </div>
 
@@ -152,10 +146,7 @@
         </div>
     </div>
 </div>
-<div id="bottom">
-			<span>
-				尚硅谷书城.Copyright &copy;2015
-			</span>
-</div>
+<%-- 静态包含页脚信息 --%>
+<%@include file="/pages/common/foot.jsp" %>
 </body>
 </html>
