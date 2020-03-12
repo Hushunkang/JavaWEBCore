@@ -12,21 +12,24 @@ public interface UserDao {
 
     /**
      * 根据用户名查询用户信息
+     *
      * @param username 用户名
-     * @return  如果返回null，说明没有这个用户。
+     * @return 如果返回null，说明没有这个用户。
      */
     public User queryUserByUsername(String username);
 
     /**
      * 根据用户名和密码查询用户
+     *
      * @param username 用户名
      * @param password 密码
-     * @return  如果返回null，表明用户名或者密码错误。
+     * @return 如果返回null，表明用户名或者密码错误。
      */
-    public User queryUserByUsernameAndPassword(String username,String password);
+    public User queryUserByUsernameAndPassword(String username, String password);
 
     /**
      * 注册用户
+     *
      * @param user
      * @return
      */

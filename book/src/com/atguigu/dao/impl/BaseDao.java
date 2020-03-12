@@ -12,9 +12,8 @@ import java.util.List;
 
 /**
  * 抽象的dao用于放一些公共的方法，很多dao继承它然后就可以用到这些方法了，提高了代码的复用性
- *
+ * <p>
  * 抽象的含义：找出不同事物的相同点，抽取出一个新的事物
- *
  */
 public abstract class BaseDao {
 
@@ -82,11 +81,12 @@ public abstract class BaseDao {
 
     /**
      * 执行返回一行一列的sql语句，往往是用于统计查询
-     * @param sql   执行的sql语句
-     * @param args  sql对应的参数值
+     *
+     * @param sql  执行的sql语句
+     * @param args sql对应的参数值
      * @return
      */
-    public Object queryForSingleValue(String sql, Object... args){
+    public Object queryForSingleValue(String sql, Object... args) {
 
         Connection conn = JdbcUtils.getConnection();
 

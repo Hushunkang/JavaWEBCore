@@ -7,8 +7,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * @author hskBeginner Email：2752962035@qq.com
  * @version 1.0
@@ -32,9 +30,9 @@ public class UserDaoTest {
         User user = userDao.queryUserByUsername("admin123");
 //        System.out.println(user);
 
-        if(user == null){
+        if (user == null) {
             System.out.println("用户名可用");
-        }else{
+        } else {
             System.out.println("用户名不可用");
         }
     }
@@ -43,16 +41,16 @@ public class UserDaoTest {
     public void queryUserByUsernameAndPassword() {
         User user = userDao.queryUserByUsernameAndPassword("admin123", "admin");
 
-        if(user == null){
+        if (user == null) {
             System.out.println("用户名或者密码错误，登录失败");
-        }else{
+        } else {
             System.out.println("找到了这个用户，登录成功");
         }
     }
 
     @Test
     public void saveUser() {
-        Integer affectRow = userDao.saveUser(new User(null,"admin123","admin","admin123@guigu.com"));
+        Integer affectRow = userDao.saveUser(new User(null, "admin123", "admin", "admin123@guigu.com"));
         System.out.println(affectRow);
     }
 

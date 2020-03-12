@@ -17,7 +17,7 @@ public class UserServiceTest {
 
     @Test
     public void login() {
-        System.out.println( userService.login(new User(null, "admin", "admin", null)) );
+        System.out.println(userService.login(new User(null, "admin", "admin", null)));
     }
 
     @Test

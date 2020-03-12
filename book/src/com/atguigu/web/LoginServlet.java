@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
         // 如果等于null,说明登录 失败!
         if (loginUser == null) {
             // 把错误信息，和回显的表单项信息，保存到Request域中
-            req.setAttribute("msg","用户或密码错误！");
+            req.setAttribute("msg", "用户或密码错误！");
             req.setAttribute("username", username);
             //   跳回登录页面
             req.getRequestDispatcher("/pages/user/login.jsp").forward(req, resp);
