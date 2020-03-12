@@ -25,6 +25,7 @@ public class BookServlet extends BaseServlet {
 //                /manager/bookServlet?action=list
 //        req.getRequestDispatcher("/manager/bookServlet?action=list").forward(req, resp);
 
+        //这里使用请求重定向（地址栏上面地址会改变）解决表单重复提交的问题
         resp.sendRedirect(req.getContextPath() + "/manager/bookServlet?action=list");
 
         //特别说明：请求转发 / 表示到部署的web工程的根目录位置
