@@ -1,6 +1,7 @@
 package com.atguigu.web;
 
 import com.atguigu.pojo.Book;
+import com.atguigu.pojo.Page;
 import com.atguigu.service.BookService;
 import com.atguigu.service.impl.BookServiceImpl;
 import com.atguigu.utils.WebUtils;
@@ -15,8 +16,32 @@ public class BookServlet extends BaseServlet {
 
     private BookService bookService = new BookServiceImpl();
 
-    protected void add(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    /**
+     * 处理分页功能
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
+    protected void page(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //1 获取请求的参数 pageNo 和 pageSize
+        int pageNo = WebUtils.parseInt(req.getParameter("pageNo"), 1);
+        int pageSize = WebUtils.parseInt(req.getParameter("pageSize"), Page.PAGE_SIZE);
+        //2 调用BookService.page(pageNo，pageSize)：Page对象
+        Page<Book> page = bookService.page(pageNo,pageSize);
 
+        page.setUrl("manager/bookServlet?action=page");
+
+        //3 保存Page对象到Request域中
+        req.setAttribute("page",page);
+        //4 请求转发到pages/manager/book_manager.jsp页面
+        req.getRequestDispatcher("/pages/manager/book_manager.jsp").forward(req,resp);
+    }
+
+    protected void add(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //这种操作的目的是让添加记录后回显页面数据确保是最后一页数据
+        int pageNo = WebUtils.parseInt(req.getParameter("pageNo"),0);
+        pageNo += 1;
         //        1、获取请求的参数==封装成为Book对象
         Book book = WebUtils.copyParamToBean(req.getParameterMap(), new Book());
 //        2、调用BookService.addBook()保存图书
@@ -26,7 +51,7 @@ public class BookServlet extends BaseServlet {
 //        req.getRequestDispatcher("/manager/bookServlet?action=list").forward(req, resp);
 
         //这里使用请求重定向（地址栏上面地址会改变）解决表单重复提交的问题
-        resp.sendRedirect(req.getContextPath() + "/manager/bookServlet?action=list");
+        resp.sendRedirect(req.getContextPath() + "/manager/bookServlet?action=page&pageNo=" + pageNo);
 
         //特别说明：请求转发 / 表示到部署的web工程的根目录位置
         //      请求重定向 / 表示到端口号的位置
@@ -42,7 +67,7 @@ public class BookServlet extends BaseServlet {
         bookService.deleteBookById(id);
 //        3、重定向回图书列表管理页面
 //                /book/manager/bookServlet?action=list
-        resp.sendRedirect(req.getContextPath() + "/manager/bookServlet?action=list");
+        resp.sendRedirect(req.getContextPath() + "/manager/bookServlet?action=page&pageNo=" + req.getParameter("pageNo"));
     }
 
 
@@ -53,7 +78,7 @@ public class BookServlet extends BaseServlet {
         bookService.updateBook(book);
 //        3、重定向回图书列表管理页面
 //        地址：/工程名/manager/bookServlet?action=list
-        resp.sendRedirect(req.getContextPath() + "/manager/bookServlet?action=list");
+        resp.sendRedirect(req.getContextPath() + "/manager/bookServlet?action=page&pageNo=" + req.getParameter("pageNo"));
     }
 
 

@@ -22,4 +22,7 @@ public interface BookDao {
 
     List<Book> queryBooks();
 
+    Integer queryForPageTotalCount();
+
+    List<Book> queryForPageItems(int begin, int pageSize);
 }
