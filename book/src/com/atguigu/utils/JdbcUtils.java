@@ -10,7 +10,7 @@ import java.util.Properties;
 
 public class JdbcUtils {
 
-    //datasource数据源，就相当于是一个数据库连接池对象，里面有很多个数据库连接对象
+    //dataSource数据源，就相当于是一个数据库连接池对象，里面有很多个数据库连接对象
     //而且数据库连接池一般都是设计成单例的类
     private static DruidDataSource dataSource;
 

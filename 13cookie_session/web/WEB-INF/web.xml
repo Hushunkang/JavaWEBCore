@@ -35,7 +35,7 @@
     </servlet-mapping>
 
 
-    <!--表示当前web工程。创建出来 的所有Session默认是20分钟 超时时长-->
+    <!--表示当前web aap。创建出来的所有Session默认是20分钟的超时时长-->
     <session-config>
         <session-timeout>20</session-timeout>
     </session-config>
