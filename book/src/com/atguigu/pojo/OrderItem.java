@@ -3,7 +3,7 @@ package com.atguigu.pojo;
 import java.math.BigDecimal;
 
 /**
- * 订单项
+ * 订单项模型 JavaBean
  */
 public class OrderItem {
     private Integer id;

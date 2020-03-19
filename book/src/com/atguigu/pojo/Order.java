@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * 订单
+ * 订单模型 JavaBean
  */
 public class Order {
     private String orderId;
