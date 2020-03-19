@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!--    filter标签用于配置一个filter过滤器-->
+    <filter>
+        <!-- 给filter起一个别名 -->
+        <filter-name>AdminFilter</filter-name>
+        <!--        配置filter的全类名-->
+        <filter-class>com.atguigu.filter.AdminFilter</filter-class>
+
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>wzg168</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>123456</param-value>
+        </init-param>
+    </filter>
+    <!--  filter-mapping配置filter过滤器的拦截路径  -->
+    <filter-mapping>
+        <!--  filter-name表示当前的拦截路径给哪个filter使用      -->
+        <filter-name>AdminFilter</filter-name>
+        <!--  url-pattern配置拦截路径
+             / 表示请求地址为： http://localhost:port/工程路径/ 映射到idea,webapp的web目录 部署的webapp的根目录
+             部署webapp实际上是给webapp编译的结果等资源部署到web server，而且一般会在tomcat上面做一个浏览器访问地址和真实资源地址的映射配置，tomcat加载这个xml配置文件即可
+             /admin/* 表示请求地址为： http://localhost:port/工程路径/admin/* -->
+        <url-pattern>/admin/*</url-pattern>
+    </filter-mapping>
+    
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.atguigu.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/loginServlet</url-pattern>
+    </servlet-mapping>
+
+</web-app>
