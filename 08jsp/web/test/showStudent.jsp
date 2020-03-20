@@ -1,6 +1,6 @@
-<%@ page import="java.util.List" %>
 <%@ page import="com.atguigu.pojo.Student" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.List" %>
+<%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2020/2/23

@@ -1,8 +1,6 @@
 package com.atguigu.threadlocal;
 
-import java.util.Map;
 import java.util.Random;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author hskBeginner Email：2752962035@qq.com

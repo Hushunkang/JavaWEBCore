@@ -4,7 +4,6 @@ import com.atguigu.pojo.Cart;
 import com.atguigu.pojo.User;
 import com.atguigu.service.OrderService;
 import com.atguigu.service.impl.OrderServiceImpl;
-import com.atguigu.utils.JdbcUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
