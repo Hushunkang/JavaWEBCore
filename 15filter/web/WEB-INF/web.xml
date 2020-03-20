@@ -30,7 +30,25 @@
              /admin/* 表示请求地址为： http://localhost:port/工程路径/admin/* -->
         <url-pattern>/admin/*</url-pattern>
     </filter-mapping>
-    
+
+    <filter>
+        <filter-name>Filter1</filter-name>
+        <filter-class>com.atguigu.filter.Filter1</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Filter1</filter-name>
+        <url-pattern>/target.jsp</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>Filter2</filter-name>
+        <filter-class>com.atguigu.filter.Filter2</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Filter2</filter-name>
+        <url-pattern>/target.jsp</url-pattern>
+    </filter-mapping>
+
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.atguigu.servlet.LoginServlet</servlet-class>
