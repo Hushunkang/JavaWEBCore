@@ -4,6 +4,7 @@ import com.atguigu.pojo.Cart;
 import com.atguigu.pojo.User;
 import com.atguigu.service.OrderService;
 import com.atguigu.service.impl.OrderServiceImpl;
+import com.atguigu.utils.JdbcUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +16,7 @@ public class OrderServlet extends BaseServlet {
     private OrderService orderService = new OrderServiceImpl();
 
     /**
-     * 生成订单
+     * 去结账，生成订单
      *
      * @param req
      * @param resp
@@ -34,15 +35,25 @@ public class OrderServlet extends BaseServlet {
             return;
         }
 
+        System.out.println("OrderServlet程序在【"+ Thread.currentThread().getName() +"】中。。。");
+
         Integer userId = loginUser.getId();
 //        调用orderService.createOrder(Cart,Userid);生成订单
-        String orderId = orderService.createOrder(cart, userId);
+        String orderId = null;
+        try {
+            orderId = orderService.createOrder(cart, userId);
+
+            JdbcUtils.commitAndClose();//提交事务
+        } catch (Exception e) {
+            JdbcUtils.rollbackAndClose();//回滚事务
+            e.printStackTrace();
+        }
 
 //        req.setAttribute("orderId", orderId);
         // 请求转发到/pages/cart/checkout.jsp
 //        req.getRequestDispatcher("/pages/cart/checkout.jsp").forward(req, resp);
 // 说明：这里不要用请求转发，因为用户f5就存在着表单重复提交的隐患，下了两次订单
-        //请求重定向可以解决f5表单重复提交问题，因为是二次请求，并且浏览器地址栏上面的地址发生改变
+        //请求重定向可以解决f5表单重复提交问题，因为是两次请求，并且浏览器地址栏上面的地址发生改变
 
         req.getSession().setAttribute("orderId",orderId);
 
