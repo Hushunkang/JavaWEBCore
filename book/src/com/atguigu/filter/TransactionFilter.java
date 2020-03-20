@@ -36,7 +36,8 @@ public class TransactionFilter implements Filter {
         } catch (Exception e) {
             JdbcUtils.rollbackAndClose();//回滚事务
             e.printStackTrace();
-            throw new RuntimeException(e);//把异常抛给Tomcat管理展示友好的错误页面
+            throw new RuntimeException(e);//把异常抛给Tomcat服务器，
+            // 承接上文。。。并且设置了error-page那么出现错误了tomcat服务器就会帮我们自动跳到相应的错误页面
         }
     }
 

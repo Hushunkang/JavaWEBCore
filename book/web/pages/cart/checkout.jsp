@@ -26,12 +26,7 @@
 
 <div id="main">
 
-    <c:if test="${not empty sessionScope.orderId}">
-        <h1>您的订单已结算，订单号为：${sessionScope.orderId}</h1>
-    </c:if>
-    <c:if test="${empty sessionScope.orderId}">
-        <h1>您的订单结账失败，请稍后再试</h1>
-    </c:if>
+    <h1>您的订单已结算，订单号为：${sessionScope.orderId}</h1>
 
 </div>
 
