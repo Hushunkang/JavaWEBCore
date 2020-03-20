@@ -32,7 +32,8 @@ public abstract class BaseDao {
             return queryRunner.update(connection, sql, args);
         } catch (SQLException e) {
             e.printStackTrace();
-            throw new RuntimeException(e);
+            throw new RuntimeException(e);//在程序运行的过程中，手动的抛出一个异常对象
+            //说明：此处操作数据库如果有问题了，必须抛出异常，来让同一个事务内的其它数据库操作知道，这样才可以回滚
         } /*finally {
             JdbcUtils.close(connection);
         }*/

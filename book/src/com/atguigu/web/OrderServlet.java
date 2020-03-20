@@ -44,19 +44,19 @@ public class OrderServlet extends BaseServlet {
             orderId = orderService.createOrder(cart, userId);
 
             JdbcUtils.commitAndClose();//提交事务
-        } catch (Exception e) {
-            JdbcUtils.rollbackAndClose();//回滚事务
-            e.printStackTrace();
-        }
 
-//        req.setAttribute("orderId", orderId);
-        // 请求转发到/pages/cart/checkout.jsp
+            //        req.setAttribute("orderId", orderId);
+            // 请求转发到/pages/cart/checkout.jsp
 //        req.getRequestDispatcher("/pages/cart/checkout.jsp").forward(req, resp);
 // 说明：这里不要用请求转发，因为用户f5就存在着表单重复提交的隐患，下了两次订单
-        //请求重定向可以解决f5表单重复提交问题，因为是两次请求，并且浏览器地址栏上面的地址发生改变
+            //请求重定向可以解决f5表单重复提交问题，因为是两次请求，并且浏览器地址栏上面的地址发生改变
 
-        req.getSession().setAttribute("orderId",orderId);
+            req.getSession().setAttribute("orderId",orderId);
 
+        } catch (Exception e) {
+            JdbcUtils.rollbackAndClose();//回滚事务，结账失败了，同一个事务内的所有jdbc相关sql操作都回滚
+            e.printStackTrace();//打印异常栈追踪信息
+        }
         resp.sendRedirect(req.getContextPath()+"/pages/cart/checkout.jsp");
     }
 
