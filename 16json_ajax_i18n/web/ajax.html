@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="pragma" content="no-cache"/>
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
+    <script type="text/javascript">
+        // 在这里使用javaScript语言发起Ajax请求，访问服务器AjaxServlet中javaScriptAjax
+        function ajaxRequest() {
+// 				1、我们首先要创建XMLHttpRequest 
+            var xmlhttprequest = new XMLHttpRequest();
+// 				2、调用open方法设置请求参数
+            xmlhttprequest.open("GET", "http://localhost:8100/16json_ajax_i18n/ajaxServlet?action=javaScriptAjax", true);//false表示同步，true表示异步
+// 				4、在send方法前绑定onreadystatechange事件，处理请求完成后的操作。
+            xmlhttprequest.onreadystatechange = function () {
+                alert(xmlhttprequest.readyState);//输出2,3,4
+                if (xmlhttprequest.readyState == 4 && xmlhttprequest.status == 200) {
+                    alert("收到服务器返回的数据：" + xmlhttprequest.responseText);
+                    var jsonObj = JSON.parse(xmlhttprequest.responseText);
+                    // 把响应的数据显示在页面上
+                    document.getElementById("div01").innerHTML = "编号：" + jsonObj.id + " , 姓名：" + jsonObj.name;
+                }
+            };
+            //xmlhttprequest.readyState
+			// 0: 请求未初始化
+			// 1: 服务器连接已建立
+			// 2: 请求已接收
+			// 3: 请求处理中
+			// 4: 请求已完成，且响应已就绪
+            alert(123);
+// 				3、调用send方法发送请求
+            xmlhttprequest.send();//将ajax请求发送给服务器
+			alert(456);
+
+            alert("我是业务逻辑代码。。。");
+            //说明：open方法设置为异步的时候，相当于主线程和分线程代码同时执行，程序不会因为等待服务器响应而处于阻塞状态
+            /*AJAX 指的是异步 JavaScript 和 XML（Asynchronous JavaScript and XML）。
+
+            XMLHttpRequest 对象如果要用于 AJAX 的话，其 open() 方法的 async 参数必须设置为 true：
+
+            xmlhttp.open("GET","ajax_test.asp",true);
+            对于 web 开发人员来说，发送异步请求是一个巨大的进步。很多在服务器执行的任务都相当费时。AJAX 出现之前，这可能会（同步阻塞）引起应用程序挂起或停止。
+
+            通过 AJAX，JavaScript 无需等待服务器的响应，而是：
+
+            在等待服务器响应时执行其他脚本
+            当响应就绪后对响应进行处理
+            */
+            //ajaxRequest方法中的代码，可以认为是两个线程而且是异步的
+			//xmlhttprequest.onreadystatechange = function () { 这一块的代码为分线程
+			//非xmlhttprequest.onreadystatechange = function () { 这一块的代码为主线程
+        }
+    </script>
+</head>
+<body>
+<!--		<a href="http://localhost:8100/16json_ajax_i18n/ajaxServlet?action=javaScriptAjax">非Ajax</a>-->
+<button onclick="ajaxRequest()">ajax request</button>
+<button onclick="ajaxRequest()">ajax request</button>
+<button onclick="ajaxRequest()">ajax request</button>
+<button onclick="ajaxRequest()">ajax request</button>
+<button onclick="ajaxRequest()">ajax request</button>
+<div id="div01">
+</div>
+<table border="1">
+    <tr>
+        <td>1.1</td>
+        <td>1.2</td>
+    </tr>
+    <tr>
+        <td>2.1</td>
+        <td>2.2</td>
+    </tr>
+</table>
+</body>
+</html>

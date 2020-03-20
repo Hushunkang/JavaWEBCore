@@ -19,4 +19,20 @@ public class OrderDaoTest {
         orderDao.saveOrder(new Order("1234567890",new Date(),new BigDecimal(100),0, 1));
 
     }
+
+    //创建一个实现OrderDao接口的匿名类的非匿名对象orderDao
+    private OrderDao orderDao = new OrderDao() {
+
+        @Override
+        public int saveOrder(Order order) {
+            return 100;
+        }
+
+    };
+
+    @Test
+    public void test1(){
+        System.out.println(orderDao.saveOrder(new Order()));
+    }
+
 }

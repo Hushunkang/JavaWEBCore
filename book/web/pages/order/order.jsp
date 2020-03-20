@@ -16,7 +16,7 @@
 <body>
 
 <div id="header">
-    <img class="logo_img" alt="" src="../../static/img/logo.gif">
+    <img class="logo_img" alt="" src="static/img/logo.gif">
     <span class="wel_word">我的订单</span>
 
     <%-- 静态包含，登录成功之后的菜单页面 --%>
@@ -49,7 +49,7 @@
         <tr>
             <td>2014.01.23</td>
             <td>190.00</td>
-            <td>已完成</td>
+            <td>已签收</td>
             <td><a href="#">查看详情</a></td>
         </tr>
     </table>

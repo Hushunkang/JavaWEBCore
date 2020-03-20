@@ -10,7 +10,7 @@
 <body>
 
 <div id="header">
-    <img class="logo_img" alt="" src="../../static/img/logo.gif">
+    <img class="logo_img" alt="" src="static/img/logo.gif">
     <span class="wel_word">订单管理系统</span>
     <%-- 静态包含，管理模块的菜单 --%>
     <%@include file="/pages/common/manager_menu.jsp" %>
@@ -36,14 +36,14 @@
             <td>2015.04.20</td>
             <td>20.00</td>
             <td><a href="#">查看详情</a></td>
-            <td>已发货</td>
+            <td>待收货</td>
         </tr>
 
         <tr>
             <td>2014.01.23</td>
             <td>190.00</td>
             <td><a href="#">查看详情</a></td>
-            <td>等待收货</td>
+            <td>待收货</td>
         </tr>
     </table>
 </div>
