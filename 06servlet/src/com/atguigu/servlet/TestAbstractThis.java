@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author hskBeginner Email：2752962035@qq.com
  * @version 1.0
  * @description
- * @create 2020年03月03日 10时16分34秒
+ * @create 2020年03月03日
  */
 public abstract class TestAbstractThis {
 

@@ -6,7 +6,7 @@ import java.math.BigDecimal;
  * @author hskBeginner Email：2752962035@qq.com
  * @version 1.0
  * @description
- * @create 2020年03月12日 10时46分41秒
+ * @create 2020年03月12日
  */
 public class Book {
 

@@ -6,7 +6,7 @@ import java.io.IOException;
 /**
  * @author hskBeginner 2752962035@qq.com
  * @description
- * @date 2020年2月28日上午4:52:59
+ * @date 2020年2月28日
  */
 public class SecondServlet implements Servlet {
 
@@ -15,7 +15,6 @@ public class SecondServlet implements Servlet {
      */
     @Override
     public void destroy() {
-        // TODO Auto-generated method stub
         System.out.println("second servlet destroy...");
     }
 
@@ -24,7 +23,6 @@ public class SecondServlet implements Servlet {
      */
     @Override
     public ServletConfig getServletConfig() {
-        // TODO Auto-generated method stub
         System.out.println("second servlet getServletConfig...");
         return null;
     }
@@ -34,7 +32,6 @@ public class SecondServlet implements Servlet {
      */
     @Override
     public String getServletInfo() {
-        // TODO Auto-generated method stub
         System.out.println("second servlet getServletInfo...");
         return null;
     }
@@ -52,7 +49,6 @@ public class SecondServlet implements Servlet {
      */
     @Override
     public void service(ServletRequest arg0, ServletResponse arg1) throws ServletException, IOException {
-        // TODO Auto-generated method stub
         System.out.println("second servlet service...");
     }
 

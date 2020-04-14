@@ -11,7 +11,7 @@ import org.junit.Test;
  * @author hskBeginner Email：2752962035@qq.com
  * @version 1.0
  * @description
- * @create 2020年03月04日 20时00分03秒
+ * @create 2020年03月04日
  */
 public class UserDaoTest {
 

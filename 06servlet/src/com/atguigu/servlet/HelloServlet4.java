@@ -11,7 +11,7 @@ import java.io.IOException;
  * @author hskBeginner Email：2752962035@qq.com
  * @version 1.0
  * @description
- * @create 2020年03月03日 05时03分02秒
+ * @create 2020年03月03日
  */
 @WebServlet(name = "hello4",urlPatterns = "/hello4")
 public class HelloServlet4 extends HttpServlet {

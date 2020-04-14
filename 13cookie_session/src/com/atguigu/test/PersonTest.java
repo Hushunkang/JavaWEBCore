@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author hskBeginner Email：2752962035@qq.com
  * @version 1.0
  * @description
- * @create 2020年03月18日 03时38分53秒
+ * @create 2020年03月18日
  */
 public class PersonTest {
 

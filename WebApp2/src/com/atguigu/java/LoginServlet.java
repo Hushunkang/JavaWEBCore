@@ -12,7 +12,7 @@ import java.util.Set;
 /**
  * @author hskBeginner 2752962035@qq.com
  * @description
- * @date 2020年2月28日下午10:48:21
+ * @date 2020年2月28日
  */
 public class LoginServlet implements Servlet {
 
@@ -42,7 +42,6 @@ public class LoginServlet implements Servlet {
      */
     @Override
     public String getServletInfo() {
-        // TODO Auto-generated method stub
         System.out.println("LoginServlet getServletInfo...");
         return null;
     }
@@ -52,7 +51,6 @@ public class LoginServlet implements Servlet {
      */
     @Override
     public void init(ServletConfig arg0) throws ServletException {
-        // TODO Auto-generated method stub
         System.out.println("LoginServlet init...");
     }
 

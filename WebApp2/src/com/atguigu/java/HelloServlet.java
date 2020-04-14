@@ -8,7 +8,7 @@ import java.util.Enumeration;
 /**
  * @author hskBeginner 2752962035@qq.com
  * @description
- * @date 2020年2月28日上午2:49:43
+ * @date 2020年2月28日
  */
 public class HelloServlet implements Servlet {
 
@@ -101,7 +101,6 @@ public class HelloServlet implements Servlet {
                 try {
                     is.close();
                 } catch (IOException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
             }

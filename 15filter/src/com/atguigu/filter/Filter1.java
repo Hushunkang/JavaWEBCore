@@ -7,7 +7,7 @@ import java.io.IOException;
  * @author hskBeginner Email：2752962035@qq.com
  * @version 1.0
  * @description
- * @create 2020年03月20日 06时09分52秒
+ * @create 2020年03月20日
  */
 public class Filter1 implements Filter {
 

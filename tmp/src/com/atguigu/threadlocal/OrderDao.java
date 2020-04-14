@@ -4,7 +4,7 @@ package com.atguigu.threadlocal;
  * @author hskBeginner Email：2752962035@qq.com
  * @version 1.0
  * @description
- * @create 2020年03月20日 08时02分53秒
+ * @create 2020年03月20日
  */
 public class OrderDao {
 

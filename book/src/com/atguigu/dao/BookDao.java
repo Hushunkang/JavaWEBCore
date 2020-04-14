@@ -8,7 +8,7 @@ import java.util.List;
  * @author hskBeginner Email：2752962035@qq.com
  * @version 1.0
  * @description
- * @create 2020年03月12日 10时58分05秒
+ * @create 2020年03月12日
  */
 public interface BookDao {
 
