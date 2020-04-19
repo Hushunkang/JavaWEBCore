@@ -72,7 +72,7 @@ public class CartServlet extends BaseServlet {
         Cart cart = (Cart) req.getSession().getAttribute("cart");
 
         if (cart != null) {
-            // 删除 了购物车商品项
+            // 删除购物车商品项
             cart.deleteItem(bookId);
             // 重定向回原来购物车展示页面
             resp.sendRedirect(req.getHeader("Referer"));
